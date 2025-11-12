@@ -1,8 +1,9 @@
 .header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e8e8e8;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
   padding: 1.5rem 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 4px var(--shadow-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header-content {
@@ -12,12 +13,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .site-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
-  color: #2c3e50;
+  color: var(--text-primary);
   letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }

@@ -4,7 +4,7 @@
 }
 
 .navigation a {
-  color: #5a67d8;
+  color: var(--accent);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -13,7 +13,7 @@
 }
 
 .navigation a:hover {
-  color: #4c51bf;
+  color: var(--accent-hover);
 }
 
 .navigation a::after {
@@ -23,7 +23,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #5a67d8;
+  background-color: var(--accent);
   transition: width 0.3s ease;
 }
 

@@ -6,14 +6,16 @@
   font-size: 2.25rem;
   font-weight: 600;
   margin-bottom: 2.5rem;
-  color: #2c3e50;
+  color: var(--text-primary);
   letter-spacing: -0.5px;
+  transition: color 0.3s ease;
 }
 
 .content {
   line-height: 1.8;
-  color: #4a5568;
+  color: var(--text-secondary);
   font-size: 1.05rem;
+  transition: color 0.3s ease;
 }
 
 .content p {
@@ -21,13 +23,14 @@
 }
 
 .link {
-  color: #5a67d8;
+  color: var(--accent);
   text-decoration: none;
   font-weight: 500;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .link:hover {
-  border-bottom-color: #5a67d8;
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-hover);
 }

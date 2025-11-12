@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import About from './pages/About';
@@ -7,10 +8,23 @@ import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') ?? 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((current) => (current === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <Router>
       <div className="app">
-        <Header />
+        <Header theme={theme} onToggleTheme={toggleTheme} />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<About />} />
