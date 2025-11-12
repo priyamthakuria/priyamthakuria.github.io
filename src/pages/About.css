@@ -1,0 +1,33 @@
+.page {
+  padding: 2rem 0;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  color: #2c3e50;
+  letter-spacing: -0.5px;
+}
+
+.content {
+  line-height: 1.8;
+  color: #4a5568;
+  font-size: 1.05rem;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.link {
+  color: #5a67d8;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.link:hover {
+  border-bottom-color: #5a67d8;
+}
