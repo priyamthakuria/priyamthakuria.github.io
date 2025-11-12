@@ -1,36 +1,58 @@
-.page {
-  padding: 2rem 0;
+.contact-page {
+  padding: 90px 0 100px;
+  background-color: var(--card-bg);
+}
+
+.contact-content-wrapper {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-header {
+  margin-bottom: 23px;
 }
 
 .page-title {
-  font-size: 2.25rem;
-  font-weight: 600;
-  margin-bottom: 2.5rem;
+  font-size: 2.125rem;
+  font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.5px;
-  transition: color 0.3s ease;
 }
 
-.content {
-  line-height: 1.8;
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  transition: color 0.3s ease;
+.contact-content {
+  max-width: 600px;
 }
 
-.content p {
-  margin-bottom: 1.5rem;
+.contact-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 30px;
 }
 
-.link {
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-link {
+  font-size: 1.25rem;
   color: var(--accent);
   text-decoration: none;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
-.link:hover {
+.contact-link:hover {
   color: var(--accent-hover);
-  border-bottom-color: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 60px 0 80px;
+  }
+  
+  .page-title {
+    font-size: 1.75rem;
+  }
 }

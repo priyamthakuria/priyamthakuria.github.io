@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
-function Navigation() {
+function Navigation({ mobileOpen }) {
+  const location = useLocation();
+  
   return (
-    <nav className="navigation">
-      <Link to="/about">About</Link>
-      <Link to="/projects">Projects</Link>
-      <Link to="/talks">Talks</Link>
-      <Link to="/contact">Contact</Link>
+    <nav className={`navigation ${mobileOpen ? 'mobile-open' : ''}`}>
+      <Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''}>Blog</Link>
+      <Link to="/works" className={location.pathname === '/works' ? 'active' : ''}>Works</Link>
+      <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
     </nav>
   );
 }

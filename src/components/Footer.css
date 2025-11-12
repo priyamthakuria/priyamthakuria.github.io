@@ -1,0 +1,33 @@
+.footer {
+  background-color: var(--header-footer-bg);
+  padding: 51px 0 54px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-bottom: 26px;
+}
+
+.social-icon {
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--accent);
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
