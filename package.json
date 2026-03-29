@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://priyamthakuria.github.io/priyam-web",
+  "homepage": "https://priyamthakuria.github.io",
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
