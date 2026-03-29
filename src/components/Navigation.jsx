@@ -1,14 +1,28 @@
 import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/blog', label: 'Blog' },
+  { to: '/contact', label: 'Contact' },
+];
+
 function Navigation({ mobileOpen }) {
-  const location = useLocation();
-  
+  const { pathname } = useLocation();
+
   return (
-    <nav className={`navigation ${mobileOpen ? 'mobile-open' : ''}`}>
-      <Link to="/blog" className={location.pathname === '/blog' ? 'active' : ''}>Blog</Link>
-      <Link to="/works" className={location.pathname === '/works' ? 'active' : ''}>Works</Link>
-      <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
+    <nav className={`navigation ${mobileOpen ? 'open' : ''}`}>
+      {navLinks.map(({ to, label }) => (
+        <Link
+          key={to}
+          to={to}
+          className={`nav-link ${pathname === to ? 'active' : ''}`}
+        >
+          {label}
+        </Link>
+      ))}
     </nav>
   );
 }

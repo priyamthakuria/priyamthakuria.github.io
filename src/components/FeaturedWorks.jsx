@@ -1,56 +1,69 @@
 import { Link } from 'react-router-dom';
 import './FeaturedWorks.css';
 
-function FeaturedWorks() {
-  const works = [
-    {
-      id: 1,
-      image: "dashboard",
-      title: "Designing Dashboards",
-      year: "2020",
-      category: "Dashboard",
-      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-    },
-    {
-      id: 2,
-      image: "portrait",
-      title: "Vibrant Portraits of 2020",
-      year: "2018",
-      category: "Illustration",
-      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-    },
-    {
-      id: 3,
-      image: "typography",
-      title: "36 Days of Malayalam type",
-      year: "2018",
-      category: "Typography",
-      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-    }
-  ];
+const projects = [
+  {
+    id: 1,
+    gradient: 'gradient-1',
+    icon: '🏆',
+    title: 'SIH 2022 — Habit Tracker',
+    subtitle: 'Smart India Hackathon Winner · Team CodeChronicles',
+    year: 'Aug 2022',
+    tags: ['ML', 'Full-Stack', 'React', 'Python', 'GovTech'],
+    description:
+      'Won Smart India Hackathon 2022 (NCERT domain). Built a habit-tracking platform with an ML model that predicts personalised use-cases for all age groups — toddlers to adults.',
+  },
+  {
+    id: 2,
+    gradient: 'gradient-2',
+    icon: '◻',
+    title: 'TIC-TAC-TOE',
+    subtitle: 'Minimax Algorithm — Multi-size Boards',
+    year: '2021',
+    tags: ['Algorithms', 'Minimax', 'JavaScript'],
+    description:
+      'An unbeatable Tic-Tac-Toe using the minimax algorithm, supporting 3×3 to 7×7 boards and four difficulty levels including an Unbeatable mode the machine never loses.',
+  },
+];
 
+function FeaturedWorks() {
   return (
     <section className="featured-works">
-      <div className="featured-works-content">
-        <h2 className="section-title">Featured works</h2>
-        <div className="works-list">
-          {works.map((work) => (
-            <article key={work.id} className="work-item">
-              <div className="work-image">
-                <div className={`work-placeholder work-${work.image}`}>
-                  {work.image === 'dashboard' && <div className="dashboard-preview"></div>}
-                  {work.image === 'portrait' && <div className="portrait-preview"></div>}
-                  {work.image === 'typography' && <div className="typography-preview">A</div>}
-                </div>
+      <div className="section-inner">
+        <div className="section-header">
+          <div className="section-label">Projects</div>
+          <h2 className="section-heading">Featured Work</h2>
+          <Link to="/projects" className="view-all">
+            All projects
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </Link>
+        </div>
+
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article key={project.id} className={`project-card ${project.gradient}`}>
+              <div className="project-card-header">
+                <span className="project-icon">{project.icon}</span>
+                <span className="project-year">{project.year}</span>
               </div>
-              <div className="work-content">
-                <Link to={`/works/${work.id}`} className="work-title">{work.title}</Link>
-                <div className="work-meta">
-                  <span className="work-year">{work.year}</span>
-                  <span className="work-category">{work.category}</span>
-                </div>
-                <p className="work-description">{work.description}</p>
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-subtitle">{project.subtitle}</p>
+              <p className="project-desc">{project.description}</p>
+              <div className="project-tags">
+                {project.tags.map(tag => (
+                  <span key={tag} className="project-tag">{tag}</span>
+                ))}
               </div>
+              <Link to={`/projects/${project.id}`} className="project-link">
+                View project
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"/>
+                  <polyline points="7 7 17 7 17 17"/>
+                </svg>
+              </Link>
             </article>
           ))}
         </div>
@@ -60,4 +73,3 @@ function FeaturedWorks() {
 }
 
 export default FeaturedWorks;
-

@@ -1,36 +1,216 @@
-.page {
-  padding: 2rem 0;
+/* ── About sections ───────────────────── */
+.about-section {
+  margin-bottom: 52px;
 }
 
-.page-title {
-  font-size: 2.25rem;
-  font-weight: 600;
-  margin-bottom: 2.5rem;
+.about-section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.5px;
-  transition: color 0.3s ease;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
 }
 
-.content {
+.about-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-prose p {
+  font-size: 0.97rem;
   line-height: 1.8;
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  transition: color 0.3s ease;
 }
 
-.content p {
-  margin-bottom: 1.5rem;
+.about-prose strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
-.link {
+.prose-link {
   color: var(--accent);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
   font-weight: 500;
-  border-bottom: 1px solid transparent;
+  transition: text-decoration-color 0.2s ease;
+}
+.prose-link:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* ── Interests ────────────────────────── */
+.interests-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.interest-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
+.interest-chip:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
 
-.link:hover {
-  color: var(--accent-hover);
-  border-bottom-color: var(--accent-hover);
+/* ── Timeline ─────────────────────────── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1px 1fr;
+  gap: 0 20px;
+  padding-bottom: 32px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-left {
+  padding-top: 4px;
+  text-align: right;
+}
+
+.timeline-year {
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.timeline-dot {
+  width: 1px;
+  background: var(--border);
+  position: relative;
+}
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.timeline-right {
+  padding-top: 2px;
+}
+
+.timeline-org {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.timeline-role {
+  font-size: 0.83rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.timeline-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ── Grouped sub-roles (e.g. Salesforce) ── */
+.timeline-subroles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 10px;
+  border-left: 1px solid var(--border);
+  margin-left: 4px;
+}
+
+.timeline-subrole {
+  display: flex;
+  gap: 14px;
+  padding: 0 0 22px 0;
+  position: relative;
+}
+
+.timeline-subrole:last-child {
+  padding-bottom: 0;
+}
+
+.subrole-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-strong);
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 0 1px var(--border-strong);
+  margin-top: 5px;
+  margin-left: -4px;
+}
+
+.subrole-body {
+  flex: 1;
+  padding-left: 4px;
+}
+
+.subrole-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.subrole-header .timeline-role {
+  margin-bottom: 0;
+}
+
+.subrole-year {
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    border-left: 2px solid var(--border);
+    padding-left: 16px;
+    padding-bottom: 28px;
+    position: relative;
+  }
+  .timeline-dot {
+    display: none;
+  }
+  .timeline-left {
+    text-align: left;
+  }
 }
