@@ -8,7 +8,7 @@ function About() {
       grouped: true,
       roles: [
         {
-          year: 'Jan 2025 – now',
+          year: 'Feb 2025 – now',
           role: 'Member of Technical Staff (SDE2)',
           desc: 'Enhanced an RCA tool using Jinja-based templates to automate metric extraction, cutting RCA time by 60%. Built an LLM AI agent for incident diagnosis that improved DevOps productivity by 50% and incident management efficiency by 50%.',
         },
